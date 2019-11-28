@@ -1,14 +1,13 @@
-import React ,{Component} from 'react';
 import React from 'react';
 import './assets/css/CadastroProduto.css';
-import './App.css';
+import cadastroProduto from './pages/cadastroProduto/cadastroProduto';
 
-class App extends Component {
-  render(){
-    return(
-
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <cadastroProduto />
+    </div>
+  );
 }
 
 export default App;
