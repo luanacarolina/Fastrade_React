@@ -1,34 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+
 //Importamos as dependencias necessarias:
-import { Route, HashRouter as Router, Switch} from 'react-router-dom';
+import { Route, HashRouter as Router, Switch } from 'react-router-dom';
 
-//Importamos a pagina de cadastroProduto
 
-import NaoEncontrada from './pages/NaoEncontrada/NaoEncontrada';
+
+//importamos as paginas
+import App from './pages/Home/App';
 import cadastroProduto from './pages/cadastroProduto/cadastroProduto';
+import Erro from './pages/paginaErro/Erro';
 
-//Realizamos a criação de rotas
-
+//Criamos uma variavel que Realiza a criação das rotas:
 const Rotas = (
-    <Router>
-        <Switch>
-            <div>
-                <Route exact path="/" component={App} />
-                <Route path="/cadastroProduto" component={cadastroProduto} />
-                <Route component ={NaoEncontrada} />
-         
-            </div>
-        </Switch>
-    </Router>
+	<Router>
+		<div>
+		<Switch>
+				<Route exact path="/" component={App} />
+				{/* <Route path="/Home" component={App} /> */}
+				<Route path="/cadastroProduto" component={cadastroProduto} />
+				<Route path="/cadastroProdutos" component={cadastroProduto} />
+				<Route component={Erro} />
+		</Switch>
+		</div>
+	</Router>
 )
 
 //Trocamos ao App padrão pelas nossas rotas
-
 ReactDOM.render(Rotas, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
